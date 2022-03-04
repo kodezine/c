@@ -32,16 +32,3 @@ consequtive_areNumbersConsequtive(uint8_t const xChar, uint8_t const yChar)
     }
     return false;
 }
-
-int main (void)
-{
-    uint8_t xChar = 'c', yChar = 'b';
-    bool isConsequtive = false;
-
-    isConsequtive = CheckIfCharsAreFollowing(xChar,yChar);
-    if(isConsequtive)
-    printf("\nThe %c and %c are found to be consecutive in the string", xChar, yChar);
-    else
-    printf("\nThe %c and %c are found to be not consecutively present", xChar, yChar);
-    return 0;
-}
