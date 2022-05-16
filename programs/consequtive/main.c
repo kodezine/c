@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     uint8_t xChar = 'c', yChar = 'b';
     bool isConsequtive = false;
 
-    isConsequtive = CheckIfCharsAreFollowing(xChar,yChar);
+    isConsequtive = consequtive_areNumbersConsequtive(xChar,yChar);
     if(isConsequtive)
     printf("\nThe %c and %c are found to be consecutive in the string", xChar, yChar);
     else
