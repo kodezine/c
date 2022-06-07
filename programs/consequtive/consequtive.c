@@ -43,11 +43,15 @@ uint8_t ShiftLeftByBits(const uint8_t input, const uint8_t bitsToShiftLeft)
 {
     uint8_t output=0;
     size_t i=0;
-    for(i=0; i<=bitsToShiftLeft; i++)
+    for(i ; i<=bitsToShiftLeft; i++)
     {
-        output= input<<i;     
+        for(size_t j=0; j<=i; j++)
+        {
+             output= input<<i;
+             return(output); 
+        }
     }
-    return(output);
+    
 
 }
 
