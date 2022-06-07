@@ -7,13 +7,16 @@
 
 int main(int argc, char *argv[])
 {
-    uint8_t xChar = 'a', yChar = 'd';
-    bool isConsequtive = false;
+    
+    /*uint8_t a= consequtive_Flip8bits(5);
+    printf("%u\n",a);*/
 
-    isConsequtive = consequtive_areNumbersConsequtive(xChar,yChar);
-    if(isConsequtive)
-    printf("\nThe %c and %c are found to be consecutive in the string", xChar, yChar);
-    else
-    printf("\nThe %c and %c are found to be not consecutively present", xChar, yChar);
+    /*uint8_t b= consequtive_shiftleft(1);
+    printf("%u\n",b);*/
+
+
+    uint8_t c=ShiftLeftByBits(1,8);
+    printf("%u",c);
+    
     return 0;
 }
