@@ -23,7 +23,6 @@ consequtive_areNumbersConsequtive(uint8_t const xChar, uint8_t const yChar)
       }
       printf("\n");
     }
-        
     return false;
 }
 uint8_t consequtive_Flip8bits(uint8_t input)

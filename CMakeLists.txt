@@ -11,3 +11,5 @@ if (CMAKE_BUILD_TYPE STREQUAL "Test")
 
     add_subdirectory(programs/consequtive/test)
 endif( CMAKE_BUILD_TYPE STREQUAL "Test")
+add_subdirectory(programs/experiments)
+#add_subdirectory(programs/addonliftfunction)
