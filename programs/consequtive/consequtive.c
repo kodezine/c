@@ -17,18 +17,12 @@ consequtive_areNumbersConsequtive(uint8_t const xChar, uint8_t const yChar)
     now = (uint8_t *)mCHAR;
     for(i = 0; i < sizeof(mCHAR) - 1; i++)
     {
-        next = now + 1;
-        printf("\n now is %c \t next is %c", *now, *next);
-
-        if((*now == xChar) && (*next == yChar))
-        {
-            return true;
-        }
-        if((*now == yChar) && (*next == xChar))
-        {
-            return true;
-        }
-        now++;
+      for (size_t j = 0; j <= i; j++)
+      {
+        printf("%c",'a' + j);
+      }
+      printf("\n");
     }
+        
     return false;
 }

@@ -1,6 +1,6 @@
 #include <stdint.h>
 #include <limits.h>
-#include <bool.h> /*"memory alignment" endianness*/
+#include <stdbool.h> /*"memory alignment" endianness*/
 
 typedef struct segment_t {
     int32_t currentPosition;

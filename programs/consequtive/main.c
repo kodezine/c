@@ -7,7 +7,7 @@
 
 int main(int argc, char *argv[])
 {
-    uint8_t xChar = 'c', yChar = 'b';
+    uint8_t xChar = 'a', yChar = 'd';
     bool isConsequtive = false;
 
     isConsequtive = consequtive_areNumbersConsequtive(xChar,yChar);
