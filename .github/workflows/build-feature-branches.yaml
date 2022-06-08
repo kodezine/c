@@ -1,0 +1,45 @@
+name: Build_feature-branches
+
+on:
+  push:
+      branches-ignore:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      # visualize which variants fail and pass to derive upstream dependency status
+      fail-fast: false
+      matrix:
+        configs: [debug]
+    steps:
+    - uses: actions/checkout@v2
+    - uses: seanmiddleditch/gha-setup-ninja@master
+    - name: Configure
+      run: |
+        cmake --preset ${{ matrix.configs }}
+    - name: Build
+      run: |
+        cmake --build --preset ${{ matrix.configs }}
+
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      # visualize which variants fail and pass to derive upstream dependency status
+      fail-fast: false
+      matrix:
+        configs: [UnityTests]
+    steps:
+    - uses: actions/checkout@v2
+    - uses: seanmiddleditch/gha-setup-ninja@master
+    - name: Configure for test on host building
+      run: |
+        cmake --preset ${{ matrix.configs }}
+    - name: Build the tests
+      run: |
+        cmake --build --preset ${{ matrix.configs }}
+    - name: Execute the developer unit test on host (CI agent)
+      run: |
+        cmake --build --preset ${{ matrix.configs }} --target test
+
