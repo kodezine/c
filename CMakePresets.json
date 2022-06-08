@@ -7,20 +7,34 @@
     },
     "configurePresets": [
         {
-            "name": "debug-guarded",
+            "name": "debug",
             "displayName": "Debug build (guarded upstream dependencies)",
-            "description": "debug-guarded",
+            "description": "debug",
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build/${presetName}",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug"
             }
+        },
+        {
+            "name": "UnityTests",
+            "displayName": "Test using Unity",
+            "description": "UnityTests",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Test"
+            }
         }
     ],
     "buildPresets": [
         {
-            "name": "debug-guarded",
-            "configurePreset": "debug-guarded"
+            "name": "debug",
+            "configurePreset": "debug"
+        },
+        {
+            "name": "UnityTests",
+            "configurePreset": "UnityTests"
         }
     ]
 }
