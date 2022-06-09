@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     printf("%u\n",b);*/
 
 
-    uint8_t c=ShiftLeftByBits(2,2);
+    uint8_t c=ShiftLeftByBits(1,1);
     printf("%u\n",c);
 
 }

@@ -41,17 +41,13 @@ uint8_t consequtive_shiftleft(uint8_t x)      //x is input and y is output
 
 uint8_t ShiftLeftByBits(const uint8_t input, const uint8_t bitsToShiftLeft)
 {
-    uint8_t output=0;
-    size_t i=0;
-    for(i ; i<=bitsToShiftLeft; i++)
-    {
-        for(size_t j=0; j<=i; j++)
-        {
-             output= input<<i;
-             return(output); 
-        }
-    }
-    
-
+  uint8_t output=0;
+  for (int i=0; i<=bitsToShiftLeft; i++)
+  {
+    output=input<<i;
+  }
+return(output);
+  
 }
-
+    
+  
