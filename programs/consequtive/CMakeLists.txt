@@ -14,5 +14,6 @@ add_executable(${PROJECT_NAME}_exe
 
 target_link_libraries(${PROJECT_NAME}_exe
     ${PROJECT_NAME}
+    m
 )
 
