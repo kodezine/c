@@ -27,27 +27,39 @@ consequtive_areNumbersConsequtive(uint8_t const xChar, uint8_t const yChar)
 }
 uint8_t consequtive_Flip8bits(uint8_t input)
 {
-  uint8_t output=0;
-  output= ~input;
-  return (output);
+    uint8_t output=0;
+    output= ~input;
+    return (output);
 }
 
 uint8_t consequtive_shiftleft(uint8_t x)      //x is input and y is output
 {
-  uint8_t y=0;
-  y= x<<1;
-  return (y);
+    uint8_t y=0;
+    y= x<<1;
+    return (y);
 }
 
 uint8_t ShiftLeftByBits(const uint8_t input, const uint8_t bitsToShiftLeft)
 {
-  uint8_t output=0;
-  for (int i=0; i<=bitsToShiftLeft; i++)
-  {
-    output=input<<i;
-  }
-return(output);
-  
+    uint32_t output = 0;
+    do{
+        if(bitsToShiftLeft > 7)
+        {
+            break;
+        }
+        if(input > 0b10000000)
+        {
+            break;
+        }
+
+        output = input << bitsToShiftLeft;
+
+        if(output > 255U)
+        {
+            output = 0U;
+            break;
+        }
+    }while(0);
+
+    return(output);
 }
-    
-  
