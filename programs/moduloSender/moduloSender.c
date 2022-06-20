@@ -62,11 +62,17 @@ static void printRawElements(void)
     }while(i < 21);
     putchar('\n');
 }
-
+static void printMessage(sMessage* pMsg)
+{
+    /* Print message on console...
+    Message Number: 00000001 \t\t :0x00000000:0x00000000...
+    */
+}
 void moduloSender_sendMessage(void)
 {
     clearRawElements();
     printValues(DUMMY_DATA32_VALUE);
     putchar('\n');
     printRawElements();
+
 }

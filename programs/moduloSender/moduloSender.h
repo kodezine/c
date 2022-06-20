@@ -4,4 +4,5 @@
 #include <stdint.h>
 
 void moduloSender_sendMessage(void);
+
 #endif//MODULOSENDER_H
