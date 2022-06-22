@@ -21,6 +21,7 @@ if("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "cortex-m7")
     )
 else()
     set(OTHER_INCLUDE_DIR
+        ${CMAKE_CURRENT_LIST_DIR}/
     )
 endif()
 
@@ -41,7 +42,8 @@ else()
     message(STATUS "[${PROJECT_NAME}] compiling with unknown architecture")
 endif()
 
+add_definitions( -DPRIVATE)
 # Add optional definitions here ...
-target_compile_definitions(${PROJECT_NAME}
-    PRIVATE
-)
+#target_compile_definitions(${PROJECT_NAME}
+#    PRIVATE
+#)

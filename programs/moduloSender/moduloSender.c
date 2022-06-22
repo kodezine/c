@@ -22,9 +22,9 @@ typedef struct structNineMsg{
     uMsgElement msgElements[9];
 }sMessage;
 
-uint32_t rawElements[21];
+STATIC uint32_t rawElements[21];
 
-static void clearRawElements(void)
+STATIC void clearRawElements(void)
 {
     size_t i = 0;
     for(i = 0; i < sizeof(rawElements)/sizeof(rawElements[1]); i++)
@@ -33,22 +33,24 @@ static void clearRawElements(void)
     }
 }
 
-static void printStream(uint8_t *pCharStream)
+STATIC uint32_t printStream(uint8_t *pCharStream)
 {
-    int i = 0;
-    do{
+    uint32_t i = 0;
+    while(pCharStream[i] != '\0')
+    {
         putchar(pCharStream[i++]);
-    }while(pCharStream[i] != '\0');
+    }
+    return(i);
 }
 
-static void printValues(uint32_t value32)
+STATIC void printValues(uint32_t value32)
 {
     char bytes[12];
     sprintf(bytes, "0x%08X%c",value32,'\0');
     printStream((uint8_t*)bytes);
 }
 
-static void printRawElements(void)
+STATIC void printRawElements(void)
 {
     size_t i = 0;
     putchar('\n');
@@ -62,7 +64,7 @@ static void printRawElements(void)
     }while(i < 21);
     putchar('\n');
 }
-static void printMessage(sMessage* pMsg)
+STATIC void printMessage(sMessage* pMsg)
 {
     /* Print message on console...
     Message Number: 00000001 \t\t :0x00000000:0x00000000...
