@@ -18,3 +18,12 @@ void test_moduloSender_printStream_NullAtBeginning(void)
     retVal = printStream(myStream);
     TEST_ASSERT_EQUAL(0, retVal);
 }
+
+void test_moduleSender_printStream_NullInBetween(void)
+{
+    uint8_t myStream[] = {'A', 'd', 'i', 't','\0', 't', 'y', 'a'};
+    int32_t retVal=0;
+    retVal = printStream(myStream);
+    TEST_ASSERT_EQUAL(4, retVal);
+    
+}

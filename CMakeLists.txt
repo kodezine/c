@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.2)
 project(cPrograms)
 add_subdirectory(programs/consequtive)
 add_subdirectory(programs/moduloSender)
+add_subdirectory(programs/adittya)
+
 
 if (CMAKE_BUILD_TYPE STREQUAL "Test")
     enable_testing()
@@ -13,4 +15,5 @@ if (CMAKE_BUILD_TYPE STREQUAL "Test")
 
     add_subdirectory(programs/consequtive/test)
     add_subdirectory(programs/moduloSender/test)
+    add_subdirectory(programs/adittya/test)
 endif( CMAKE_BUILD_TYPE STREQUAL "Test")
